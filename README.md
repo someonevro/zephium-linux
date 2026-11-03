@@ -1,58 +1,19 @@
-> [!IMPORTANT]
-> **This is an unofficial Linux build of Zephium. It is not affiliated with or endorsed by the Zephium developers.**
->
-> **Credits**
-> - **Zephium** is created by [crynta](https://github.com/crynta) and the [Zephium contributors](https://github.com/zephium-browser/Zephium/graphs/contributors). All of the browser is their work, and the Zephium name and logo belong to them.
-> - **Built on** [Tauri](https://tauri.app), [Wry](https://github.com/tauri-apps/wry), [WebKitGTK](https://webkitgtk.org), Brave's [adblock-rust](https://github.com/brave/adblock-rust) and [EasyList](https://easylist.to) (see Acknowledgements below).
-> - **Linux port:** [someonevro](https://github.com/someonevro), with the code changes made by [Claude Code](https://claude.com/claude-code) (Anthropic). About 50 lines on top of upstream; see [discussion #284](https://github.com/zephium-browser/Zephium/discussions/284).
->
-> If you like Zephium, support the original project: [zephium.app](https://zephium.app) · [GitHub](https://github.com/zephium-browser/Zephium).
->
-> - **Download:** see [Releases](../../releases) for `.deb` (Debian/Ubuntu), `.rpm` (Fedora/openSUSE) and an Arch package. Install `webkit2gtk-4.1` and `gtk3` first, plus GStreamer plugins for media.
-> - **No AppImage:** WebKit's web-process sandbox cannot run inside one, and it is not turned off here.
-> - **Not included on Linux:** Work (the agent feature), Chrome extensions, and the in-app updater. Update by installing a newer release.
-> - **Build from source:** `pnpm install --frozen-lockfile`, then `pnpm build:linux` (or `pnpm dev:linux`).
-> - **Bugs in this build:** report them in this fork, not upstream.
-
 <div align="center">
   <img src=".github/assets/logo.png" width="112" height="112" alt="Zephium" />
-  <h1>Zephium</h1>
+  <h1>Zephium for Linux</h1>
 
-  <p><strong>A fast, fully featured browser and work environment,<br />reimagined for you and your agents.</strong></p>
+  <p><strong>An unofficial Linux build of <a href="https://github.com/zephium-browser/Zephium">Zephium</a>,<br />a fast, private browser on the system web engine.</strong></p>
 
   <p>
-    <a href="https://github.com/zephium-browser/Zephium/releases"><img src="https://img.shields.io/github/v/release/zephium-browser/Zephium?include_prereleases&label=release&color=blue" alt="Latest release" /></a>
+    <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/someonevro/zephium-linux?label=release&color=blue" alt="Latest release" /></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-blue" alt="License: MPL-2.0" /></a>
-    <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows-lightgrey" alt="Platforms: macOS and Windows" />
-    <a href="https://discord.gg/tyveTUyEp7"><img src="https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=white" alt="Discord" /></a>
-    <a href="https://www.youtube.com/@crynta"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" alt="YouTube" /></a>
-    <a href="https://x.com/CryntaDev"><img src="https://img.shields.io/badge/x.com-000000?logo=x&logoColor=white" alt="X: @CryntaDev" /></a>
-  </p>
-
-  <p>
-    <a href="https://zephium.app">Website</a> ·
-    <a href="https://zephium.app/docs">Docs</a> ·
-    <a href="https://youtu.be/QbSarcWspvw">Launch film</a> ·
-    <a href="https://github.com/zephium-browser/Zephium/releases/latest">Download</a>
+    <img src="https://img.shields.io/badge/platform-Linux-lightgrey" alt="Platform: Linux" />
+    <a href="https://github.com/zephium-browser/Zephium"><img src="https://img.shields.io/badge/upstream-zephium--browser%2FZephium-black?logo=github" alt="Upstream: zephium-browser/Zephium" /></a>
   </p>
 </div>
 
-<details align="center">
-  <summary><sub>Read in another language</sub></summary>
-  <sub>
-    <a href="docs/readme/README.zh-CN.md">简体中文</a> ·
-    <a href="docs/readme/README.ja.md">日本語</a> ·
-    <a href="docs/readme/README.ko.md">한국어</a> ·
-    <a href="docs/readme/README.hi.md">हिन्दी</a> ·
-    <a href="docs/readme/README.es.md">Español</a> ·
-    <a href="docs/readme/README.pt-BR.md">Português</a> ·
-    <a href="docs/readme/README.fr.md">Français</a> ·
-    <a href="docs/readme/README.de.md">Deutsch</a> ·
-    <a href="docs/readme/README.pl.md">Polski</a> ·
-    <a href="docs/readme/README.ru.md">Русский</a> ·
-    <a href="docs/readme/README.id.md">Bahasa Indonesia</a>
-  </sub>
-</details>
+> [!IMPORTANT]
+> **This is not the official Zephium.** It is not affiliated with or endorsed by the Zephium developers. Report bugs in this build here, not upstream.
 
 <p align="center">
   <picture>
@@ -61,115 +22,21 @@
   </picture>
 </p>
 
-<p align="center">
-  <strong>Safari's efficiency. Brave's protection. Arc's design.</strong><br />
-  And <strong>Work</strong>, a canvas where your agents do real work in plain sight.
-</p>
+## Credits
 
-<p align="center"><a href="https://youtu.be/QbSarcWspvw">▶&nbsp; Watch the launch film</a></p>
+- **Zephium** is created by [crynta](https://github.com/crynta) and the [Zephium contributors](https://github.com/zephium-browser/Zephium/graphs/contributors). The browser is entirely their work, and the Zephium name and logo belong to them.
+- **Built on** [Tauri](https://tauri.app), [Wry](https://github.com/tauri-apps/wry), [WebKitGTK](https://webkitgtk.org), Brave's [adblock-rust](https://github.com/brave/adblock-rust) and [EasyList](https://easylist.to).
+- **Linux port:** [someonevro](https://github.com/someonevro), with the code changes made by [Claude Code](https://claude.com/claude-code) (Anthropic). It is about 50 lines on top of upstream; see [discussion #284](https://github.com/zephium-browser/Zephium/discussions/284).
 
----
+If you like Zephium, support the original project: [zephium.app](https://zephium.app) · [GitHub](https://github.com/zephium-browser/Zephium).
 
-Zephium is an open-source browser built in Rust on your operating system's own
-web engine: WebKit on macOS, the engine Safari uses, and WebView2 on Windows. It
-is not a fork of Chromium or Firefox. It blocks ads and trackers natively, runs
-Chrome extensions, and puts tasks, notes and your time on the web one click
-away. The download is about 30 MB.
+## What you get
 
-One switch away is **Work**. Your work already happens in the browser, where
-your tabs, logins and history are. Work brings agents there instead of asking
-you to move somewhere else, and lets you watch them do it.
-
-## Work
-
-Describe an outcome in your own words: plan a trip, compare vendors, design a
-system, fix a bug. Work takes it from there on a canvas, and you see every
-step.
-
-<p align="center">
-  <img src=".github/assets/work.webp" alt="A whole Work run in Zephium: helpers reading Uptime Kuma, Gatus and OpenStatus on their own sites, a local helper checking the endpoints, then the answer, a comparison table and charts, a diagram, the config and four tasks" width="960" />
-</p>
-<p align="center"><sub>Asked for a status page, Work reads three monitors on their own sites, checks your endpoints from your machine, builds the pick, and leaves the comparison, the config and the tasks on the canvas.</sub></p>
-
-- **It starts from what you already have.** Work recalls what it knows about
-  you, searches your history when it helps, and loads the right skill for the
-  job. Each step appears on the canvas as it happens.
-- **Helpers work in parallel, in the open.** For a trip, one helper looks for
-  flats while another checks visas and a third compares flights. They browse
-  live pages you can watch, and any source opens in a pane beside the canvas.
-- **Results stay on the canvas.** Comparisons, tables, charts, diagrams, plans,
-  code and documents are laid out where you can read them. They are not lost in
-  a chat scroll.
-- **A plan becomes your day.** One click turns each step of a plan into a task
-  linked back to the Work. Anything worth keeping can be saved as a note.
-- **It reaches past the browser.** Work reads and edits the folders you grant,
-  runs commands, and hands larger coding jobs to Claude Code or Codex. It
-  connects to MCP servers such as Linear, Notion, Sentry, Stripe and Figma, and
-  to command-line tools such as `gh`.
-- **You stay in charge.** Anything that posts, merges or changes something
-  waits for your OK.
-- **Bring any model.** Use your own keys for Anthropic, OpenAI, Google Gemini,
-  xAI, Mistral, DeepSeek, Groq, Cerebras or OpenRouter, or run a model locally
-  through Ollama, LM Studio or any OpenAI-compatible server. Keys live in your
-  system keychain. Or sign in to Zephium AI and skip the keys: it picks the
-  right model for each step, and you start with free credits
-  ([pricing](https://zephium.app/pricing)).
-
-Work ships with 25 skills, including trip planning, research, compare and
-choose, plan my day, fix a bug and weekly status. You can write your own.
-
-## Ask Zephium
-
-An assistant in the sidebar, on `⌘ E` (`Ctrl E` on Windows). It reads the page
-you are on and answers about it, points at what is worth your time, and opens
-what you choose in new tabs. Ask it to take a few steps on the page, or to
-restyle a site you visit every day, and it does it in place. When a job
-outgrows a chat, **Continue in Work** carries it to the canvas, with the page
-along.
-
-<p align="center">
-  <img src=".github/assets/ask.webp" alt="Ask Zephium beside Hacker News: three stories picked, opened in new tabs, and the front page re-set as calm cards" width="960" />
-</p>
-<p align="center"><sub>Asked what is worth reading, it picks three stories, opens them, and re-sets the front page as calm cards.</sub></p>
-
-## Browse
-
-### Fast and light
-
-- Native WebKit on macOS and WebView2 on Windows, so pages run on the engine
-  your system already keeps up to date.
-- Inactive tabs go to sleep and wake when you return, so memory stays low with
-  many tabs open.
-- A native ad and tracker blocker, on by default, built on Brave's
-  [adblock-rust](https://github.com/brave/adblock-rust) with EasyList and
-  EasyPrivacy. Requests are stopped before a page can make them, and you can
-  hide anything else on a page with a click.
-
-### Designed to live in
-
-- A new tab that opens onto the sky, by day or by night with your theme, with
-  your time, your focus and the day's tasks along its foot.
-- Vertical tabs in a quiet sidebar, with spaces, profiles, pinned tabs, folders
-  and split view.
-- Liquid Glass on macOS 26 and Mica on Windows 11.
-- A launcher on `⌘ ⇧ Space` (`Ctrl Shift Space` on Windows) reaches tabs,
-  history, notes and commands from anywhere on your desktop. Anything you type
-  there can become a task.
-- Every keyboard shortcut can be changed.
-
-### Extensions
-
-Install extensions straight from the Chrome Web Store. Twenty popular ones are
-verified to work well in Zephium and are a click away in the extension manager,
-including 1Password, Bitwarden, Grammarly, DeepL, Dark Reader, Vimium,
-SponsorBlock, Raindrop.io, Notion Web Clipper and Refined GitHub.
-
-### Bring everything with you
-
-The welcome flow imports from Chrome, Safari, Arc, Zen, Firefox, Brave and
-Edge.
-
-## Built in
+- Pages run on WebKitGTK, the web engine your distro keeps up to date, with each page in WebKit's sandbox.
+- A native ad and tracker blocker, on by default.
+- Vertical tabs, spaces, profiles, pinned tabs, folders and split view.
+- A launcher on `Ctrl Shift Space`.
+- Tasks, time tracking and notes built in.
 
 <table>
   <tr>
@@ -178,118 +45,50 @@ Edge.
     <td width="33%" align="center"><img src=".github/assets/notes.webp" alt="Notes: a Markdown release checklist with code, beside the page" /></td>
   </tr>
   <tr>
-    <td valign="top"><strong>Tasks</strong><br /><sub>Write them the way you would say them, like "call Anna tomorrow at 3". Lists, priorities, deadlines, subtasks, and the page you were on stays linked.</sub></td>
-    <td valign="top"><strong>Time</strong><br /><sub>See where your time on the web goes, counted on this device only. Start a focus round and the sites you choose stay shut until the break.</sub></td>
-    <td valign="top"><strong>Notes</strong><br /><sub>Notes beside the page, each a Markdown file you own. Edits from other apps show up in Zephium.</sub></td>
+    <td valign="top"><strong>Tasks</strong><br /><sub>Lists, priorities, deadlines and subtasks, with the page you were on linked.</sub></td>
+    <td valign="top"><strong>Time</strong><br /><sub>Where your time on the web goes, counted on this device only, plus focus rounds.</sub></td>
+    <td valign="top"><strong>Notes</strong><br /><sub>Markdown notes beside the page, each a file you own.</sub></td>
   </tr>
 </table>
 
-## Private by default
+**Not available in this Linux build:** Work (the agent feature), Chrome extensions, and the in-app updater. The Work tab is visible but does nothing.
 
-- **No Zephium telemetry.** Zephium has no first-party browsing telemetry.
-  On Windows, Microsoft Edge WebView2 sends required diagnostic data to
-  Microsoft; optional diagnostics follow Windows settings. Microsoft Defender
-  SmartScreen is on by default and can send website addresses and download
-  information to Microsoft for reputation checks. Settings → Privacy offers
-  a SmartScreen switch (effective after restarting Zephium) and a link to
-  Windows diagnostic settings. If Windows cannot apply OFF, the switch is
-  shown as managed and the browser continues to start. An unavailable startup
-  preference read keeps SmartScreen on and shows that launch fallback in Settings.
-  Turning either optional diagnostics or SmartScreen off does not disable required
-  WebView2 diagnostics. See
-  [Microsoft's WebView2 data and privacy documentation](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/data-privacy).
-- **No account needed.** History, tasks, notes, memory and time live on your
-  device. An account is only needed for Zephium AI. Update checks, protection
-  lists and extension services can contact their servers without signing in.
-- **Zephium AI keeps no content.** Requests pass through to the model that
-  answers them. We count usage for your plan, never store prompts, answers or
-  pages, and never see your card.
-- **Private windows keep nothing** once they close.
+## Install
 
-## Download
+Download from [Releases](../../releases/latest). You need WebKitGTK 4.1 and GTK 3, plus GStreamer plugins for audio and video.
 
-| Platform | Architecture | Installer | Requires |
-| -------- | ------------ | --------- | -------- |
-| macOS | Apple Silicon | [`Zephium-macOS-arm64.dmg`](https://github.com/zephium-browser/Zephium/releases/latest/download/Zephium-macOS-arm64.dmg) | macOS Sonoma 14 or later |
-| Windows | x64 | [`Zephium-Windows-x64-setup.exe`](https://github.com/zephium-browser/Zephium/releases/latest/download/Zephium-Windows-x64-setup.exe) | Windows 10 or 11 |
+| Distro | Command |
+|---|---|
+| Arch / CachyOS / Manjaro | `sudo pacman -U zephium-bin-*.pkg.tar.zst` |
+| Debian / Ubuntu / Mint | `sudo apt install ./app.zephium_*_amd64.deb` |
+| Fedora / openSUSE | `sudo dnf install ./app.zephium-*.x86_64.rpm` |
 
-Windows builds are not code-signed yet, so SmartScreen may show "Windows
-protected your PC". Choose **More info**, then **Run anyway**. Signing is on
-the way.
+Verify downloads with `sha256sum -c SHA256SUMS`.
 
-Zephium downloads updates in the background and installs them when you choose
-**Relaunch to update**. All releases are on the
-[releases page](https://github.com/zephium-browser/Zephium/releases).
-
-## What's next
-
-- Linux and Intel Macs.
-- Code-signed Windows builds.
-- More extensions verified to work, and native extensions built into Zephium.
-- And much more.
+- **Tested on:** Arch (CachyOS, KDE Plasma Wayland). The `.deb` and `.rpm` have not been tested on their own distros yet.
+- **Updates:** install the newer release over the old one. There is no auto-update.
+- **No AppImage:** WebKit's sandbox cannot run inside one, and this build does not turn it off.
 
 ## Build from source
 
-Prerequisites:
-
-- [Rust](https://rustup.rs) through `rustup`. The toolchain pinned in
-  [`rust-toolchain.toml`](rust-toolchain.toml) installs itself on first use.
-- Node.js, at the version in [`.node-version`](.node-version).
-- pnpm, through Corepack: `corepack enable`.
-- The [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/) for your
-  platform: Xcode Command Line Tools on macOS, or the Microsoft C++ Build Tools
-  and WebView2 on Windows.
+You need Rust (through `rustup`), Node.js, pnpm and the [Tauri Linux prerequisites](https://v2.tauri.app/start/prerequisites/#linux).
 
 ```sh
-git clone https://github.com/zephium-browser/Zephium.git
-cd Zephium
+git clone https://github.com/someonevro/zephium-linux.git
+cd zephium-linux
 pnpm install --frozen-lockfile
-pnpm dev
+pnpm dev:linux      # run a development build
+pnpm -C desktop exec tauri build --bundles deb,rpm -- --no-default-features
 ```
 
-Development builds use their own `app.zephium.dev` profile, so they do not
-touch the data of an installed Zephium. Linux is not supported yet. See
-[CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
-
-## Architecture
-
-- Untrusted pages run in raw native WebViews, apart from the privileged Svelte
-  interface that draws the browser.
-- A Rust core owns tabs, storage, the blocker, extensions and agents.
-- Each profile has its own isolated website data and Zephium-owned history,
-  session and favicon data.
-- The network blocker is native and built on Brave's
-  [adblock-rust](https://github.com/brave/adblock-rust).
-- Narrow in-tree adapters for Tauri and Wry handle storage policy, WebView
-  construction, callbacks and teardown.
-
-Read more in [docs/architecture.md](docs/architecture.md) and
-[docs/security-model.md](docs/security-model.md).
-
-## Contributing
-
-Zephium is maintained by one person with a clear product direction, so please
-discuss larger changes before writing them. [CONTRIBUTING.md](CONTRIBUTING.md)
-explains what gets merged and how. Questions and ideas are welcome on
-[Discord](https://discord.gg/tyveTUyEp7).
-
-## Security
-
-Please report vulnerabilities privately, not in a public issue. See
-[SECURITY.md](SECURITY.md).
+Linux builds use `--no-default-features`, because the Work feature only compiles on macOS and Windows.
 
 ## License
 
-Zephium is licensed under the [Mozilla Public License 2.0](LICENSE).
+Zephium is licensed under the [Mozilla Public License 2.0](LICENSE), and so are the Linux changes in this fork.
 
 The bundled EasyList and EasyPrivacy filter lists are used under
 [CC BY-SA 3.0](assets/blocker-seed/v1/LICENSE-CC-BY-SA-3.0.txt); see
 [the notice](assets/blocker-seed/v1/NOTICE) for attribution.
 
-The Zephium name and logo are not licensed under the MPL.
-
-## Acknowledgements
-
-Zephium stands on [Tauri](https://tauri.app), [Wry](https://github.com/tauri-apps/wry),
-Brave's [adblock-rust](https://github.com/brave/adblock-rust) and
-[EasyList](https://easylist.to).
+The Zephium name and logo are not licensed under the MPL. They belong to the Zephium developers.
