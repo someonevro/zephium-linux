@@ -204,6 +204,11 @@ fn install_composition(
     let sized_chrome = chrome.clone();
     fixed.connect_size_allocate(move |_, allocation| {
         sized_chrome.set_size_request(allocation.width(), allocation.height());
+        // GtkFixed already allocated the chrome at its old request before this
+        // handler ran, and the new request only applies on a later layout pass
+        // that never comes while the window size is unchanged. Allocate now so
+        // the chrome is not left at 1x1.
+        sized_chrome.size_allocate(allocation);
     });
     fixed.show_all();
 

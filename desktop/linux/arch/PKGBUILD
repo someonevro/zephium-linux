@@ -1,0 +1,27 @@
+# Repackages the .deb from `pnpm build:linux` for Arch-based distros.
+# Native packages use the system WebKitGTK, whose Web-process sandbox
+# (bubblewrap + xdg-dbus-proxy) cannot run inside the AppImage.
+# shortcut: reads the local build output, not a release tarball; switch
+# source=() to a published .deb URL once Linux releases exist.
+pkgname=zephium-bin
+pkgver=1.0.4
+pkgrel=1
+pkgdesc="A fast, private browser with a built-in place to get work done"
+arch=('x86_64')
+url="https://zephium.app"
+license=('MPL-2.0')
+depends=('webkit2gtk-4.1' 'gtk3' 'bubblewrap' 'xdg-dbus-proxy')
+optdepends=('gst-plugins-good: audio and video playback'
+            'gst-plugins-bad: more media codecs'
+            'gst-libav: H.264 and other FFmpeg codecs')
+provides=('zephium')
+conflicts=('zephium')
+options=('!strip' '!debug')
+
+package() {
+  local deb="$startdir/../../../target/release/bundle/deb/app.zephium_${pkgver}_amd64.deb"
+  [[ -f $deb ]] || { error "Run 'pnpm build:linux' first: $deb not found"; return 1; }
+  bsdtar -xOf "$deb" data.tar.gz | bsdtar -xf - -C "$pkgdir"
+  install -Dm644 "$pkgdir/usr/lib/app.zephium/licenses/Zephium-MPL-2.0.txt" \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

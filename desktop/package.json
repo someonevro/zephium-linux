@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "node ../scripts/require-supported-platform.mjs && tauri dev --config tauri.dev.conf.json",
-    "build": "node ../scripts/require-supported-platform.mjs && tauri build"
+    "build": "node ../scripts/require-supported-platform.mjs && tauri build",
+    "dev:linux": "tauri dev --config tauri.dev.conf.json -- --no-default-features",
+    "build:linux": "tauri build -- --no-default-features"
   },
   "devDependencies": {
     "@tauri-apps/cli": "2.12.4"

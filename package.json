@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "pnpm -C desktop dev",
     "build": "pnpm -C desktop build",
+    "dev:linux": "pnpm -C desktop dev:linux",
+    "build:linux": "pnpm -C desktop build:linux",
     "frame:dev": "pnpm -C frame dev",
     "frame:build": "pnpm -C frame build"
   },

@@ -1,7 +1,6 @@
-// Linux builds do not compile yet, so stop before Cargo with a clear note.
+// Linux builds without the macOS/Windows-only Work feature, so they use their
+// own scripts that pass --no-default-features.
 if (process.platform === "linux") {
-  console.error(
-    "Zephium isn't available on Linux yet. We're working on it; follow https://zephium.app for news.",
-  );
+  console.error("On Linux, run `pnpm dev:linux` or `pnpm build:linux` instead.");
   process.exit(1);
 }

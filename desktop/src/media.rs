@@ -928,6 +928,10 @@ pub(crate) async fn media_admit_remote(
     element: String,
     url: String,
 ) -> Result<zephium_ipc::MediaAdmitV1, ()> {
+    #[cfg(feature = "work-product")]
+    use super::work_provider::record_diagnostic;
+    #[cfg(not(feature = "work-product"))]
+    use super::write_diagnostic as record_diagnostic;
     use zephium_ipc::MediaAdmitV1;
     let refused = |error| Ok(MediaAdmitV1::Refused { error });
     if !super::authorize(&caller, super::CallerPolicy::Main, "media_admit_remote")
@@ -950,7 +954,7 @@ pub(crate) async fn media_admit_remote(
         Ok(MediaAdmitV1::Refused { error }) => Some(*error),
         _ => None,
     };
-    super::work_provider::record_diagnostic(format_args!(
+    record_diagnostic(format_args!(
         "work: phase=media_admit outcome={outcome} error={error:?} fetch={:?} bytes={} elapsed_ms={}",
         trace.fetch,
         trace.bytes,
