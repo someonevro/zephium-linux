@@ -1,3 +1,19 @@
+> [!IMPORTANT]
+> **This is an unofficial Linux build of Zephium. It is not affiliated with or endorsed by the Zephium developers.**
+>
+> **Credits**
+> - **Zephium** is created by [crynta](https://github.com/crynta) and the [Zephium contributors](https://github.com/zephium-browser/Zephium/graphs/contributors). All of the browser is their work, and the Zephium name and logo belong to them.
+> - **Built on** [Tauri](https://tauri.app), [Wry](https://github.com/tauri-apps/wry), [WebKitGTK](https://webkitgtk.org), Brave's [adblock-rust](https://github.com/brave/adblock-rust) and [EasyList](https://easylist.to) (see Acknowledgements below).
+> - **Linux port:** [someonevro](https://github.com/someonevro), with the code changes made by [Claude Code](https://claude.com/claude-code) (Anthropic). About 50 lines on top of upstream; see [discussion #284](https://github.com/zephium-browser/Zephium/discussions/284).
+>
+> If you like Zephium, support the original project: [zephium.app](https://zephium.app) · [GitHub](https://github.com/zephium-browser/Zephium).
+>
+> - **Download:** see [Releases](../../releases) for `.deb` (Debian/Ubuntu), `.rpm` (Fedora/openSUSE) and an Arch package. Install `webkit2gtk-4.1` and `gtk3` first, plus GStreamer plugins for media.
+> - **No AppImage:** WebKit's web-process sandbox cannot run inside one, and it is not turned off here.
+> - **Not included on Linux:** Work (the agent feature), Chrome extensions, and the in-app updater. Update by installing a newer release.
+> - **Build from source:** `pnpm install --frozen-lockfile`, then `pnpm build:linux` (or `pnpm dev:linux`).
+> - **Bugs in this build:** report them in this fork, not upstream.
+
 <div align="center">
   <img src=".github/assets/logo.png" width="112" height="112" alt="Zephium" />
   <h1>Zephium</h1>
