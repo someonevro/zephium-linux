@@ -1,0 +1,24 @@
+pkgbase = zephium-linux-bin
+	pkgdesc = Unofficial Linux build of Zephium, a fast, private browser on WebKitGTK
+	pkgver = 1.0.4
+	pkgrel = 1
+	url = https://github.com/someonevro/zephium-linux
+	arch = x86_64
+	license = MPL-2.0
+	license = CC-BY-SA-3.0
+	depends = webkit2gtk-4.1
+	depends = gtk3
+	depends = bubblewrap
+	depends = xdg-dbus-proxy
+	optdepends = gst-plugins-good: audio and video playback
+	optdepends = gst-plugins-bad: more media codecs
+	optdepends = gst-libav: H.264 and other FFmpeg codecs
+	provides = zephium
+	conflicts = zephium
+	conflicts = zephium-bin
+	options = !strip
+	options = !debug
+	source = https://github.com/someonevro/zephium-linux/releases/download/v1.0.4-linux.1/app.zephium_1.0.4_amd64.deb
+	sha256sums = fe616a7241012cb2d611f227b53de1b96ab5fda2364962e2be866c92d9aa68fb
+
+pkgname = zephium-linux-bin

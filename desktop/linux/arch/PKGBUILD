@@ -1,27 +1,31 @@
-# Repackages the .deb from `pnpm build:linux` for Arch-based distros.
-# Native packages use the system WebKitGTK, whose Web-process sandbox
-# (bubblewrap + xdg-dbus-proxy) cannot run inside the AppImage.
-# shortcut: reads the local build output, not a release tarball; switch
-# source=() to a published .deb URL once Linux releases exist.
-pkgname=zephium-bin
+# Maintainer: someonevro <224757625+someonevro@users.noreply.github.com>
+#
+# Unofficial Linux build of Zephium (https://github.com/zephium-browser/Zephium),
+# not affiliated with the Zephium developers. Repackages the .deb published at
+# https://github.com/someonevro/zephium-linux/releases. Uses the system WebKitGTK,
+# whose web-process sandbox (bubblewrap + xdg-dbus-proxy) cannot run in an AppImage.
+pkgname=zephium-linux-bin
 pkgver=1.0.4
+_linuxrel=1
 pkgrel=1
-pkgdesc="A fast, private browser with a built-in place to get work done"
+pkgdesc="Unofficial Linux build of Zephium, a fast, private browser on WebKitGTK"
 arch=('x86_64')
-url="https://zephium.app"
-license=('MPL-2.0')
+url="https://github.com/someonevro/zephium-linux"
+license=('MPL-2.0' 'CC-BY-SA-3.0')
 depends=('webkit2gtk-4.1' 'gtk3' 'bubblewrap' 'xdg-dbus-proxy')
 optdepends=('gst-plugins-good: audio and video playback'
             'gst-plugins-bad: more media codecs'
             'gst-libav: H.264 and other FFmpeg codecs')
 provides=('zephium')
-conflicts=('zephium')
+conflicts=('zephium' 'zephium-bin')
 options=('!strip' '!debug')
+source=("$url/releases/download/v$pkgver-linux.$_linuxrel/app.zephium_${pkgver}_amd64.deb")
+sha256sums=('fe616a7241012cb2d611f227b53de1b96ab5fda2364962e2be866c92d9aa68fb')
 
 package() {
-  local deb="$startdir/../../../target/release/bundle/deb/app.zephium_${pkgver}_amd64.deb"
-  [[ -f $deb ]] || { error "Run 'pnpm build:linux' first: $deb not found"; return 1; }
-  bsdtar -xOf "$deb" data.tar.gz | bsdtar -xf - -C "$pkgdir"
+  bsdtar -xf data.tar.gz -C "$pkgdir"
   install -Dm644 "$pkgdir/usr/lib/app.zephium/licenses/Zephium-MPL-2.0.txt" \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/blocker" \
+    "$pkgdir"/usr/lib/app.zephium/licenses/blocker/*
 }
