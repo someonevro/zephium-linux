@@ -65,6 +65,9 @@ Download from [Releases](../../releases/latest). You need WebKitGTK 4.1 and GTK 
 
 Verify downloads with `sha256sum -c SHA256SUMS`.
 
+> [!NOTE]
+> **AUR package coming soon.** `zephium-linux-bin` is ready but not on the AUR yet, because AUR registrations are currently closed. Until then, install the Arch package from [Releases](../../releases/latest), or build it yourself with the [PKGBUILD](desktop/linux/arch/PKGBUILD): `cd desktop/linux/arch && makepkg -si`.
+
 - **Tested on:** Arch (CachyOS, KDE Plasma Wayland). The `.deb` and `.rpm` have not been tested on their own distros yet.
 - **Updates:** install the newer release over the old one. There is no auto-update.
 - **No AppImage:** WebKit's sandbox cannot run inside one, and this build does not turn it off.
